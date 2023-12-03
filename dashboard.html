@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roommate Duties Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+        .top-right-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .top-right-link a {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .top-right-link a:hover {
+            background-color: #2980b9;
+        }
+        .dashboard-header {
+            margin-bottom: 20px;
+        }
+        .announcement-section, .task-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .task-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .task-item span {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+        .task-item button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .task-item button:hover {
+            background-color: #2980b9;
+        }
+        .announcement-input {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .publish-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .publish-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right-link">
+        <a href="task_list.html">Task List</a>
+    </div>
+
+    <h1>Roommate Duties Dashboard</h1>
+
+    <div class="dashboard-header">
+        <p>Group Name: {{ group.name }}</p>
+        <p>Generated Code: {{ g_code }}</p>
+    </div>
+
+    <!-- Announcement Section -->
+    <div class="announcement-section">
+        <h2>Announcements</h2>
+        <input type="text" id="announcementInput" class="announcement-input" placeholder="Enter your announcement">
+        <button class="publish-button" onclick="publishAnnouncement()">Publish</button>
+        <!-- Display announcements here -->
+    </div>
+
+    <!-- Task Section -->
+    <div class="task-section">
+        <h2>Task List</h2>
+        <ul class="task-list">
+            <!-- Sample Task Item, repeat as needed -->
+            <li class="task-item">
+                <span>Trash Duty</span>
+                <span>John Doe</span>
+                <button onclick="markAsDone(this)">Mark as Done</button>
+            </li>
+            <li class="task-item">
+                <span>Clean Living Room</span>
+                <span>John Doe</span>
+                <button onclick="markAsDone(this)">Mark as Done</button>
+            </li>
+            <li class="task-item">
+                <span>Washroom Duty</span>
+                <span>John Doe</span>
+                <button onclick="markAsDone(this)">Mark as Done</button>
+            </li>
+            <li class="task-item">
+                <span>Cooking</span>
+                <span>John Doe</span>
+                <button onclick="markAsDone(this)">Mark as Done</button>
+            </li>
+            <li class="task-item">
+                <span>Dishes</span>
+                <span>John Doe</span>
+                <button onclick="markAsDone(this)">Mark as Done</button>
+            </li>
+            <!-- Add more task items as needed -->
+        </ul>
+    </div>
+
+    <script>
+        function markAsDone(button) {
+            // Implement logic to mark the task as done
+            // You can move the completed task to the bottom and highlight the next person
+        }
+
+        function publishAnnouncement() {
+            var announcementInput = document.getElementById('announcementInput');
+            var announcementText = announcementInput.value.trim();
+            if (announcementText !== '') {
+                // Implement logic to publish the announcement
+                // You can display it in a suitable format within the announcement section
+                // Clear the input field after publishing
+                announcementInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

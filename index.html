@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Roomie!</h1>
+
+    <!-- Create Group Form -->
+    <form action="/" method="post">
+        <label for="group_name">Group Name:</label>
+        <input type="text" id="group_name" name="group_name" required>
+        <label for="your_name">Your Name:</label>
+        <input type="text" id="your_name" name="your_name" required>
+        <button type="submit">Create Group</button>
+    </form>
+
+    <!-- Join Group Form -->
+    <form action="/join-group" method="post">
+        <label for="code">Enter Group Code:</label>
+        <input type="text" id="code" name="code" required>
+        <label for="your_name_join">Your Name:</label>
+        <input type="text" id="your_name_join" name="your_name_join" required>
+        <button type="submit">Join Group</button>
+    </form>
+</body>
+</html>
+
+

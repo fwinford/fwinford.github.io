@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page with Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #3498db;
+        }
+
+        .profile-form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #3498db;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .profile {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .roommate-profiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .roommate-profile {
+            width: calc(50% - 10px);
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .roommate-profile h3 {
+            color: #3498db;
+        }
+
+        .chat-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .chat-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Your Profile</h1>
+        <form class="profile-form" id="profileForm" onsubmit="showProfile(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+
+            <button type="submit">Save Profile</button>
+        </form>
+
+        <div class="profile" id="profile">
+            <!-- Profile info will be dynamically displayed here -->
+        </div>
+
+        <h2>Roommate Profiles</h2>
+        <div class="roommate-profiles">
+            <div class="roommate-profile">
+                <h3>Roommate 1</h3>
+                <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+            <div class="roommate-profile">
+                <h3>Roommate 2</h3>
+                <p>Bio: Sed blandit tristique sapien, ut vehicula urna facilisis at...</p>
+            </div>
+            <!-- Add more roommate profiles -->
+        </div>
+
+        <a href="#" class="chat-button" onclick="openChat()">Chat with Roommates</a>
+    </div>
+
+    <script>
+        function showProfile(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const bio = document.getElementById("bio").value;
+
+            const profileForm = document.getElementById("profileForm");
+            const profile = document.getElementById("profile");
+
+            profile.innerHTML = `
+                <h2>${name}</h2>
+                <p>Email: ${email}</p>
+                <p>Bio: ${bio}</p>
+            `;
+            profile.style.display = "block";
+            profileForm.style.display = "none";
+        }
+
+        function openChat() {
+            // Chat functionality
+            alert("Chat functionality to be implemented!");
+        }
+    </script>
+</body>
+</html>
